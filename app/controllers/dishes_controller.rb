@@ -69,6 +69,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:name, :cuising, :user_id)
+      params.require(:dish).permit(:name, :cuisine, :user_id)
     end
 end

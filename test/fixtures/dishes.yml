@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  cuising: MyString
+  cuisine: MyString
   user: one
 
 two:
   name: MyString
-  cuising: MyString
+  cuisine: MyString
   user: two
