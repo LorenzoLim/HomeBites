@@ -4,12 +4,20 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+#Heroku should use the version of Ruby
+ruby '2.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 for development and test database
+gem 'sqlite3', group: [:development, :test]
+#postgres for production database
+gem 'pg', group: :production
+#12 Factor for Heroku
+gem 'rails_12factor',group: :production
+#Stripe for taking payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+# Bootstrap for styling and scripts
+gem 'boostrap-sass'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
