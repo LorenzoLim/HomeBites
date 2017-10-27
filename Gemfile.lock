@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 36e6c16cc855d04b25c06332e9780bdaf10b329a
+  specs:
+    stripe (3.7.0)
+      faraday (~> 0.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,7 +48,14 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    autoprefixer-rails (7.1.6)
+      execjs
     bindex (0.5.0)
+    boostrap-sass (0.0.2)
+      bootstrap-sass
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.15.4)
@@ -64,6 +78,8 @@ GEM
     crass (1.0.2)
     erubi (1.7.0)
     execjs (2.7.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18-x64-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -85,9 +101,11 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
+    multipart-post (2.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
+    pg (0.21.0-x64-mingw32)
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
@@ -110,6 +128,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -170,19 +193,26 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  boostrap-sass
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3
+  stripe!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.16.0.pre.3
