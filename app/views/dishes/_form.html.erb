@@ -26,6 +26,11 @@
     <%= form.text_field :user_id, id: :dish_user_id %>
   </div>
 
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
