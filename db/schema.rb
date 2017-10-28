@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20171027134443) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.string "cuisine"
+    t.string "img_url"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
