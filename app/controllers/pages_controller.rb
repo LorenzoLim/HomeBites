@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @dishes = Dish.all
   end
 
   def cuisine

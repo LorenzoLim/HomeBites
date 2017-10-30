@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /dishes
   # GET /dishes.json
   def index
@@ -25,6 +25,8 @@ class DishesController < ApplicationController
   # POST /dishes.json
   def create
     @dish = Dish.new(dish_params)
+    @dish.user_id = current_user.id
+    @dish.img_url = 'Bird.jpg'
 
     respond_to do |format|
       if @dish.save
