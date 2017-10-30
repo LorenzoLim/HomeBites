@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'All Dishes', dishes_path %>
+<h1><%= @dish.name %></h1>
+
+<%= image_tag(@dish.image.url, alt: 'Dish') if @dish.image? %>
+
+<p><%= @dish.body %></p>
+
+<p><%= link_to 'Edit', edit_dish_path(@dish) %></p>
+
 <p>
   <strong>Name:</strong>
   <%= @dish.name %>
