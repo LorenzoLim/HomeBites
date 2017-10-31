@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /dishes
   # GET /dishes.json
   def index
@@ -69,6 +69,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:name, :cuisine, :user_id)
+      params.require(:dish).permit(:name, :cuisine, :user_id,:image)
     end
 end
