@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <%= link_to 'Home', '/pages/home'  %>
+    <%= link_to 'Cuisine', '/pages/cuisine'  %>
+    <%= link_to 'Cooks', '/pages/cooks'  %>
+    <%= link_to 'Orders', '/pages/order'  %>
+    <%= link_to 'Contact', '/pages/contact'  %>
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <%= link_to current_user.name, '/user/profile'  %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path)  %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
