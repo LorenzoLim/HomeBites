@@ -2,6 +2,16 @@
 
 <h1>Dishes</h1>
 
+<% if user_signed_in? %>
+
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+<% else %>
+
+  <%= link_to('Login', new_user_session_path)  %>
+
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -17,7 +27,8 @@
       <tr>
         <td><%= dish.name %></td>
         <td><%= dish.cuisine %></td>
-        <td><%= dish.user %></td>
+        <td><%= dish.user.name %></td>
+        <td><%= image_tag dish.img_url %></td>
         <td><%= link_to 'Show', dish %></td>
         <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
         <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
