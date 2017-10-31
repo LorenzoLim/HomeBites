@@ -5,8 +5,6 @@
 
 <%= image_tag(@dish.image.url, alt: 'Dish') if @dish.image? %>
 
-<p><%= @dish.body %></p>
-
 <p><%= link_to 'Edit', edit_dish_path(@dish) %></p>
 
 <p>
@@ -19,10 +17,6 @@
   <%= @dish.cuisine %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @dish.user %>
-</p>
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>

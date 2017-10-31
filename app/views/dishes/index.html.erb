@@ -28,7 +28,7 @@
         <td><%= dish.name %></td>
         <td><%= dish.cuisine %></td>
         <td><%= dish.user.name %></td>
-        <td><%= image_tag dish.img_url %></td>
+        <td><%= image_tag dish.image %></td>
         <td><%= link_to 'Show', dish %></td>
         <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
         <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>

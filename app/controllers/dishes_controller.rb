@@ -26,7 +26,7 @@ class DishesController < ApplicationController
   def create
     @dish = Dish.new(dish_params)
     @dish.user_id = current_user.id
-    @dish.img_url = 'Bird.jpg'
+    # @dish.img_url = 'Bird.jpg'
 
     respond_to do |format|
       if @dish.save
