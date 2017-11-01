@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :dishes
-  resources :user
-  devise_for :users
+
   root 'pages#home'
 
   get 'pages/home'
@@ -17,6 +15,10 @@ Rails.application.routes.draw do
   get 'user/profile'
 
   get 'user/new'
+
+  resources :dishes
+  devise_for :users
+  resources :user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
