@@ -12,13 +12,10 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get 'user/profile'
-
-  get 'user/new'
+  get 'pages/profile'
 
   resources :dishes
   devise_for :users
-  resources :user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

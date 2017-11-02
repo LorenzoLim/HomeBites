@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20171027134443) do
     t.string "name"
     t.string "address"
     t.string "role"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

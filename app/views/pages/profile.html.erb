@@ -1,0 +1,10 @@
+<h1>User#profile</h1>
+<p>Find me in app/views/user/profile.html.erb</p>
+<%= link_to "Update Account", edit_user_registration_path %>
+<%= link_to 'New Dish', new_dish_url  %>
+
+        <td><%= @user.name %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.address %></td>
+        <td><%= @user.role %></td>
+        <td><%= image_tag @user.image.url %></td>
