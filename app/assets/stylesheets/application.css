@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import 'bootstrap';
 
 img.home-Img{
   text-align: center;
