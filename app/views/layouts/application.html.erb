@@ -28,11 +28,11 @@
               Cuisine
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Chinese</a>
+              <%= link_to('Chinese', dishes_path(cuisine: "Chinese"), class: "dropdown-item") %>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Italian</a>
+              <%= link_to('Italian', dishes_path(cuisine: "Italian"), class: "dropdown-item") %>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Japanese</a>
+              <%= link_to('Japanese', dishes_path(cuisine: "Japanese"), class: "dropdown-item") %>
             </div>
           </li>
           <li class="nav-item">

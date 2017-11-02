@@ -1,10 +1,10 @@
-<h1 style="text-align:center;margin-top:50px;margin-bottom:50px;">~ All Dishes ~</h1>
+<h1 class="title">~ All Dishes ~</h1>
 
 <div class="container">
   <div class="row">
     <% @dishes.each do |dish| %>
         <div class="col-sm-3">
-            <div class="panel-body"><%= image_tag dish.image, style: "margin-bottom:20px;width:100%;height:200px" %></div>
+            <div class="panel-body"><%= image_tag dish.image, class: "img-thumbnail img-fluid", style: "height:200px;margin-bottom:20px" %></div>
         </div>
     <% end %>
   </div>
