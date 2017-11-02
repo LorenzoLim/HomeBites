@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to 'HomeBites', '/pages/home', { :class=>"navbar-brand" }  %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/pages/home">HomeBites</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,26 +23,32 @@
           <li class="nav-item active">
             <a class="nav-link" href="/pages/home">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/cooks">Cooks</a>
-          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/page/cuisine" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="/pages/cuisine" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Cuisine
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Chinese</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Italian</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Spanish</a>
+              <a class="dropdown-item" href="#">Japanese</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/cooks">Cooks</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/pages/order">Orders</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/contact">Contact</a>
-          </li>
+        </ul>
+        <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to current_user.name, '/user/profile', class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: "nav-link" %></li>
+        <% end %>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,17 +56,6 @@
         </form>
       </div>
     </nav>
-    <%= link_to 'Home', '/pages/home'  %>
-    <%= link_to 'Cuisine', '/pages/cuisine'  %>
-    <%= link_to 'Cooks', '/pages/cooks'  %>
-    <%= link_to 'Orders', '/pages/order'  %>
-    <%= link_to 'Contact', '/pages/contact'  %>
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      <%= link_to current_user.name, '/user/profile'  %>
-    <% else %>
-      <%= link_to('Login', new_user_session_path)  %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
