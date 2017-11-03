@@ -3,9 +3,6 @@ class PagesController < ApplicationController
     @dishes = Dish.all
   end
 
-  def cuisine
-  end
-
   def cooks
   end
 
@@ -17,5 +14,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @dishes = Dish.all
   end
 end

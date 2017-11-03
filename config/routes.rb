@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  get 'pages/cuisine'
-
   get 'pages/cooks'
 
   get 'pages/order'
