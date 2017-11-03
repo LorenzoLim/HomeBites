@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :users
+    resources :conversations
+    resources :dishes
+    resources :messages
+
+    root to: "users#index"
+  end
+
   root 'pages#home'
 
   get 'pages/home'

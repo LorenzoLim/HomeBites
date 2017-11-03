@@ -4,6 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# Gem for Admin Dashboard
+gem "administrate"
 # Gem for image uploading
 gem 'carrierwave', '~> 1.0'
 # Gem for authentication
