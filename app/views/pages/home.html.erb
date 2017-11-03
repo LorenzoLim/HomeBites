@@ -3,8 +3,8 @@
 <div class="container">
   <div class="row">
     <% @dishes.each do |dish| %>
-        <div class="col-sm-3">
-          <%= link_to('Dish', dishes_path(name: dish.name), image_tag dish.image, class: "img-thumbnail img-fluid", style: "height:200px;margin-bottom:20px") %>
+      <div class="col-sm-3">
+          <%= link_to image_tag(dish.image, border: 0), dish, {class: 'img-thumbnail img-fluid'} %>
       </div>
     <% end %>
   </div>
