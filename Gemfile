@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Gem for environment variables
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'fog'
+# Gem for file storage
+gem 'fog', '~> 1.0'
 # Gem for Admin Dashboard
 gem "administrate"
 # Gem for image uploading
