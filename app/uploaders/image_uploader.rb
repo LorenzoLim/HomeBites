@@ -7,6 +7,20 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include Cloudinary::CarrierWave
   #
   # process :convert => 'png'
+  # def filename
+  #     super.chomp(File.extname(super)) + '.png' if original_filename
+  # end
+  #
+  # version :image, if: :create_image? do
+  #     process :resize_to_limit => [200, 200]
+  # end
+  #
+  # def create_image?(img = nil)
+  #     # conditions, return true / false
+  #     # e.g. model.should_create_image?
+  # end
+
+  # process :convert => 'png'
   # process :tags => ['post_picture']
   #
   # version :standard do
@@ -18,8 +32,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :image
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
