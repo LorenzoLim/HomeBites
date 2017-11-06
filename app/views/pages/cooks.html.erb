@@ -1,2 +1,6 @@
-<h1>Pages#cooks</h1>
-<p>Find me in app/views/pages/cooks.html.erb</p>
+<% @users.each do |user| %>
+    <%= user.name %>
+    <%= user.address %>
+    <%= user.email %>
+    <%= image_tag user.image %>
+<% end %>

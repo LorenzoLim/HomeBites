@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def cooks
+    @users = User.all
   end
 
   def order
