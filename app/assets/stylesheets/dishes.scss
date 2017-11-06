@@ -1,3 +1,26 @@
 // Place all the styles related to the Dishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img-display{
+  display: flex;
+  justify-content: center;
+}
+
+.img-food{
+  width: 80%;
+}
+
+.img-pic{
+  width: 100%;
+  height: 450px;
+}
+
+.title{
+  text-align: center;
+}
+
+.img-details{
+  position: relative;
+  left: 110px;
+}

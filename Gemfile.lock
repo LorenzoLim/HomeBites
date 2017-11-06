@@ -454,7 +454,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
-  fog (~> 1.0)
+  fog
   jbuilder (~> 2.5)
   pg
   puma (~> 3.7)
