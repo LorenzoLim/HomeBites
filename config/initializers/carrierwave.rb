@@ -1,3 +1,4 @@
+require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
 
   module CarrierWave
