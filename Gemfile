@@ -8,7 +8,7 @@ end
 # Gem for environment variables
 gem 'dotenv-rails', groups: [:development, :test]
 # Gem for file storage
-gem 'fog', '~> 1.0'
+gem 'fog'
 # Gem for Admin Dashboard
 gem "administrate"
 # Gem for image uploading
