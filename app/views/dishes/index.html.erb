@@ -1,32 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1 class="title">~ <%= @cuisine %> Dishes ~</h1>
 
-<h1>Dishes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cuisine</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @dishes.each do |dish| %>
-      <tr>
-        <td><%= dish.name %></td>
-        <td><%= dish.cuisine %></td>
-        <td><%= dish.user.name %></td>
-        <td><%= image_tag dish.image %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-3">
+          <%= link_to image_tag(dish.image, class: 'img-thumbnail img-fluid food'), dish %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+</div>
 
 <%= link_to 'New Dish', new_dish_path %>
