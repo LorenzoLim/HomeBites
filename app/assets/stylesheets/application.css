@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
 
 img.home-Img{
   text-align: center;
@@ -55,6 +56,13 @@ img.home-Img{
   border-radius: 25px;
 }
 
+.header{
+  padding-top: 60px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  background-color: rgba(0,0,0,0.6);
+}
+
 .cook{
   height: 200px;
   margin: 20px;
@@ -73,6 +81,14 @@ img.home-Img{
 
 .title{
   text-align:center;
-  margin-top:50px;
-  margin-bottom:50px;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.home-title{
+  font-size: 80px;
+}
+
+.other-title{
+  font-size: 50px;
 }
