@@ -21,6 +21,55 @@ img.home-Img{
   height: 200px;
 }
 
+.details-positioning{
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+.btn-custom{
+  margin-top: 10px;
+  font-size: 15px;
+  width: 200px;
+}
+
+.name{
+  font-size: 30px;
+  margin: 20px;
+}
+
+.user-dishes{
+  margin-top: 20px;
+}
+
+.cook-dishes{
+  height: 160px;
+  width: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.cooks-display{
+  margin: 20px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.cook{
+  height: 200px;
+  margin: 20px;
+}
+
+.img-positioning{
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+.img-thumb{
+  width: 250px;
+  height: 250px;
+}
+
 .title{
   text-align:center;
   margin-top:50px;

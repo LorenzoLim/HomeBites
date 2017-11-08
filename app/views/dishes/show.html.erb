@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="title"><%= @dish.name %></h1>
 <div class="container">
   <div class="img-display">
@@ -9,7 +7,7 @@
   </div>
 <br><br>
   <div class="img-details">
-  <% if current_user.id == @dish.user_id %>
+  <% if current_user == @dish.user %>
   <p><%= link_to 'Edit', edit_dish_path(@dish) %></p>
   <% end %>
   <p>
@@ -21,6 +19,8 @@
     <strong>Cuisine:</strong>
     <%= @dish.cuisine %>
   </p>
-  <p><strong>Price:</strong> $7.50</p>
+  <p><strong>Price:</strong>
+     <%= @dish.price %>
+  </p>
   </div>
 </div>

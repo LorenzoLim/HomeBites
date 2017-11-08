@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get 'pages/profile'
+  get '/profile/:id', to: 'pages#profile', as: 'profile'
 
   resources :dishes
   devise_for :users
