@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 20171109003827) do
   end
 
   create_table "order_dishes", force: :cascade do |t|
-    t.integer "cart_id"
+    t.integer "order_id"
     t.integer "dish_id"
     t.integer "qty"
-    t.index ["cart_id"], name: "index_order_dishes_on_cart_id"
     t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
+    t.index ["order_id"], name: "index_order_dishes_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|

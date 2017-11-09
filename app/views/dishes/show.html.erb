@@ -1,4 +1,4 @@
-<h1 class="title other-title"><%= @dish.name %></h1>
+<h1 class="title other-title">~ <%= @dish.name %> ~</h1>
 <div class="container">
   <div class="img-display">
     <div class="img-food">
@@ -22,5 +22,8 @@
   <p><strong>Price:</strong>
      <%= @dish.price %>
   </p>
+  <% if current_user != @dish.user %>
+  <%= link_to 'Add To Order', order_path(dish_id: @dish.id, qty: 1), method: :post %>
+  <% end %>
   </div>
 </div>

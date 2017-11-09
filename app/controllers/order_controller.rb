@@ -10,14 +10,14 @@ class OrderController < ApplicationController
     if existing_line_item
       existing_line_item.qty = existing_line_item.qty + params[:qty].to_i
       existing_line_item.save
-      redirect_to dishes_path, notice: "Added #{params[:qty]} x #{dish.name} to order"
+      redirect_to order_path, notice: "Added #{params[:qty]} x #{dish.name} to order"
       return
     end
 
     if OrderDish.create!(dish: dish, order: order, qty: params[:qty].to_i)
-      redirect_to dishes_path, notice: "Added #{params[:qty]} x #{dish.name} to order"
+      redirect_to order_path, notice: "Added #{params[:qty]} x #{dish.name} to order"
     else
-      redirect_to dishes_path, notice: "Failed to add to order"
+      redirect_to order_path, notice: "Failed to add to order"
     end
   end
 
