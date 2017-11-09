@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Gem for http processing
+gem 'httparty'
 # Gem for image resizing
 gem "mini_magick"
 # Gem for environment variables

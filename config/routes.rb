@@ -14,15 +14,14 @@ Rails.application.routes.draw do
   delete 'order', to: 'order#remove_dish'
 
   root 'pages#home'
-
   get 'pages/home'
-
+  get 'pages/thankyou', to: 'pages#thankyou'
   get 'pages/cooks'
-
   get 'pages/order'
-
   get 'pages/contact'
-
+  get 'stripe/connect', to: 'stripe#connect'
+  get 'checkout/thankyou'
+  post 'checkout', to: 'checkout#create'
   get '/profile/:id', to: 'pages#profile', as: 'profile'
 
   resources :dishes

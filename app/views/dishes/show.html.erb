@@ -23,7 +23,15 @@
      <%= @dish.price %>
   </p>
   <% if current_user != @dish.user %>
-  <%= link_to 'Add To Order', order_path(dish_id: @dish.id, qty: 1), method: :post %>
+  <%= form_with(url: '/checkout', local: true) do |form| %>
+    <%= hidden_field_tag(:dish_id, @dish.id) %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="<%= @dish.name %>"
+              data-amount="<%= (@dish.price * 100).to_i %>"
+              data-locale="auto"></script>
+  <% end %>
+  <!-- <%= link_to 'Add To Order', order_path(dish_id: @dish.id, qty: 1), method: :post %> -->
   <% end %>
   </div>
 </div>
