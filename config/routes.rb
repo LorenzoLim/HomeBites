@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete 'order', to: 'order#remove_dish'
 
   root 'pages#home'
+  get 'conversations/index', as: 'conversations'
   get 'pages/home'
   get 'pages/thankyou', to: 'pages#thankyou'
   get 'pages/cooks'
