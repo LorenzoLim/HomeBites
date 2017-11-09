@@ -29,6 +29,10 @@ class CheckoutController < ApplicationController
     # Log the response from Stripe
     puts charge.inspect
 
+
+    # Send an email of the product bought
+    SupportMailer.contact_support(current_user.email, @dish.name).deliver_now
+
     # Success!
     redirect_to '/pages/thankyou'
 
