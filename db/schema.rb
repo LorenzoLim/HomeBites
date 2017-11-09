@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171109003827) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.string "cuisine"
-    t.float "price"
+    t.string "price"
     t.string "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
