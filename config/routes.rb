@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  get 'order', to: 'order#show'
+  post 'order', to: 'order#add_dish'
+  delete 'order', to: 'order#remove_dish'
+
   root 'pages#home'
 
   get 'pages/home'
