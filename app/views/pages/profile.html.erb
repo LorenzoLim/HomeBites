@@ -13,6 +13,13 @@
   <% else %>
     <button class="btn-custom"><%= link_to "New Dish", new_dish_url, class: 'btn' %></button>
   <% end %>
+  <br>
+  <p>
+    Your Location
+  </p>
+  <iframe class="map" frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJkfUuQvJZkWsRUIne81qjAgU&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen>
+  </iframe>
 
   <div class="user-dishes">
     <div class="container">
