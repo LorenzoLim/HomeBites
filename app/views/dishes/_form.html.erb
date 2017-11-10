@@ -1,5 +1,5 @@
 <%= form_with(model: dish, local: true) do |form| %>
-<div class="form-group form-align">
+<div class="form-group form-align form-control">
   <% if dish.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
@@ -12,22 +12,22 @@
     </div>
   <% end %>
 
-  <div class="field form-control">
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :dish_name %>
   </div>
 
-  <div class="field form-control">
+  <div class="field">
     <%= form.label :cuisine %>
     <%= form.text_field :cuisine, id: :dish_cuisine %>
   </div>
 
-  <div class="field form-control">
+  <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price, id: :price %>
   </div>
 
-  <div class="field form-control">
+  <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
