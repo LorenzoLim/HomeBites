@@ -9,3 +9,9 @@
 * You can view all the cuisine listed or select which cuisines you want to view.
 
 * You can also view all the cooks so that you can see all the dishes that they created.
+
+# Setup
+
+* Run Bundle install to install all the gems
+
+* Run rails db:migrate to run all the migratations
