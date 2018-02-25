@@ -5,6 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'nokogiri'
+gem 'geokit'
+# Gem for Code Quality
+gem 'rubocop', require: false
+# Gem for emails
+# gem 'mailgun-ruby', '~>1.1.6'
+# Gem for http processing
+gem 'httparty'
+# Gem for image resizing
+gem "mini_magick"
 # Gem for environment variables
 gem 'dotenv-rails', groups: [:development, :test]
 # Gem for file storage
@@ -20,7 +31,7 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 # Gem for windows machines
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Heroku should use the version of Ruby
-ruby '2.4.1'
+ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 for development and test database

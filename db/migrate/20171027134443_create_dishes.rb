@@ -3,6 +3,7 @@ class CreateDishes < ActiveRecord::Migration[5.1]
     create_table :dishes do |t|
       t.string :name
       t.string :cuisine
+      t.decimal :price
       t.string :image
       t.references :user, foreign_key: true
 

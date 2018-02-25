@@ -35,6 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :role
       t.string :image
+      t.string :stripe_user_id
 
       t.timestamps null: false
     end

@@ -1,33 +1,37 @@
-<h1>User#profile</h1>
-<p>Find me in app/views/user/profile.html.erb</p>
-<%= link_to "Update Account", edit_user_registration_path %>
-<%= link_to 'New Dish', new_dish_url  %>
+<div class="container">
+  <div class="img-positioning">
+    <p><%= notice %></p>
+    <%= image_tag(@user.image.url, class: 'img-thumbnail img-fluid img-thumb')  %>
+  </div>
+  <div class="details-positioning">
 
-<td><%= @user.name %></td>
-<td><%= @user.email %></td>
-<td><%= @user.address %></td>
-<td><%= @user.role %></td>
-<td><%= image_tag @user.image.url %></td>
+  <p class='name'><strong><%= @user.name %></strong></p>
+  <button class="btn-custom"><%= link_to "Update Account", edit_user_registration_path, class: 'btn' %></button><br>
+  <button class="btn-custom"><%= link_to "Conversations",conversations_path, class: 'btn' %></button><br>
+  <button class="btn-custom"><%= link_to "Admin Dashboard", admin_root_url, class: 'btn' %></button><br>
+  <button class="btn-custom"><%= link_to "New Dish", new_dish_url, class: 'btn' %></button>
+  <% if @stripe_user_id.nil? %>
+    <br><p>Become a Seller and: <%= @stripe_user_id %></p>
+    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= ENV.fetch('STRIPE_CLIENT_ID') %>&scope=read_write" class="stripe-connect"><span>Connect with Stripe</span></a>
+  <% else %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cuisine</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% end %>
+  <br>
+  <p>
+    Your Location
+  </p>
+  <iframe class="map" frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJkfUuQvJZkWsRUIne81qjAgU&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen>
+  </iframe>
 
-  <tbody>
-    <% @dishes.each do |dish| %>
-      <tr>
-        <td><%= dish.name %></td>
-        <td><%= dish.cuisine %></td>
-        <td><%= image_tag dish.image %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="user-dishes">
+    <div class="container">
+      <div class="row">
+        <% @dishes.each do |dish| %>
+            <div class="col-sm-3">
+                <%= link_to image_tag(dish.image, class: 'img-thumbnail img-fluid food'), dish %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

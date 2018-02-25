@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 
   def cooks
     @users = User.all
+    @dishes = Dish.where(user: @user)
+    # @cuisines = @dishes.select(:cuisine).uniq
   end
 
   def order
@@ -14,7 +16,11 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
-    @dishes = Dish.all
+    @stripe_user_id = current_user.stripe_user_id
+    @user = User.find(params[:id])
+    @dishes = Dish.where(user: @user)
+  end
+
+  def thankyou
   end
 end

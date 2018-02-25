@@ -5,6 +5,7 @@ class DishesController < ApplicationController
   # GET /dishes.json
   def index
     @dishes = Dish.where(cuisine: params[:cuisine])
+    @cuisine = params[:cuisine]
   end
 
   # GET /dishes/1
@@ -71,6 +72,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:name, :cuisine, :user_id, :image)
+      params.require(:dish).permit(:name, :cuisine, :price, :user_id, :image)
     end
 end
