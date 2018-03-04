@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20171109003827) do
   end
 
   create_table "order_dishes", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "dish_id"
+    t.bigint "order_id"
+    t.bigint "dish_id"
     t.integer "qty"
     t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
     t.index ["order_id"], name: "index_order_dishes_on_order_id"
@@ -80,4 +80,6 @@ ActiveRecord::Schema.define(version: 20171109003827) do
   end
 
   add_foreign_key "dishes", "users"
+  add_foreign_key "order_dishes", "dishes"
+  add_foreign_key "order_dishes", "orders"
 end
