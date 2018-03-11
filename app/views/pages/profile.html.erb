@@ -1,7 +1,9 @@
 <div class="container">
   <div class="img-positioning">
     <p><%= notice %></p>
-    <%= image_tag(@user.image.url, class: 'img-thumbnail img-fluid img-thumb')  %>
+    <% if @user.image.url.present? %>
+      <%= image_tag(@user.image.url, class: 'img-thumbnail img-fluid img-thumb')  %>
+    <% end %>
   </div>
   <div class="details-positioning">
 

@@ -1,50 +1,23 @@
-<h2 class="form-align">Sign up</h2>
+<div class="form-container">
+  <div class="login-form">
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-<div class="form-group form-align">
-  <div class="field form-control">
-    <%= f.label :name %>
-    <%= f.text_field :name, id: :name, autofocus: true %>
-  </div>
+    <%= f.text_field :name, id: :name, autofocus: true, placeholder: 'Name', :class => 'text-input' %>
 
-  <div class="field form-control">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
+    <%= f.email_field :email, placeholder: 'Email', :class => 'text-input' %>
 
-  <div class="field form-control">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field form-control">
-    <%= f.label :role %>
-    <%= f.text_field :role %>
-  </div>
-
-  <div class="field form-control">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="field form-control">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', :class => 'text-input' %>
 
-  <div class="field form-control">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', :class => 'text-input' %>
 
-  <div class="actions form-align">
-    <%= f.submit "Sign up", class: "btn btn-default" %>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "btn btn-default" %>
+    </div>
+    <% end %>
   </div>
 </div>
-<% end %>
-
-<%= render "users/shared/links" %>

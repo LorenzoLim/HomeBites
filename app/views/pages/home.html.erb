@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row">
+<div class="food-container">
+  <div class="food-grid">
     <% @dishes.each do |dish| %>
-      <div class="col-sm-3">
-          <%= link_to image_tag(dish.image, class: 'img-thumbnail img-fluid food'), dish %>
+      <div class="food-item">
+          <%= link_to image_tag(dish.image, class: 'img-thumbnail'), dish %>
       </div>
     <% end %>
   </div>
