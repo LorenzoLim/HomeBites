@@ -1,37 +1,39 @@
-<h1 class="title other-title">~ <%= @dish.name %> ~</h1>
-<div class="container">
-  <div class="img-display">
-    <div class="img-food">
+<div class="imageShow-container">
   <%= image_tag(@dish.image.url, alt: 'Dish',class: "img-pic") if @dish.image? %>
-    </div>
-  </div>
-<br><br>
+</div>
+<div class="divider"></div>
+<div class="foodShow-container">
   <div class="img-details">
-  <% if current_user == @dish.user %>
-  <p><%= link_to 'Edit', edit_dish_path(@dish) %></p>
-  <% end %>
-  <p>
-    <strong>Name:</strong>
-    <%= @dish.name %>
-  </p>
+    <% if current_user == @dish.user %>
+    <p><%= link_to 'Edit', edit_dish_path(@dish) %></p>
+    <% end %>
+    <p>
+      <strong>Name:</strong>
+      <%= @dish.name %>
+    </p>
 
-  <p>
-    <strong>Cuisine:</strong>
-    <%= @dish.cuisine %>
-  </p>
-  <p><strong>Price:</strong>
-     <%= @dish.price %>
-  </p>
-  <% if current_user != @dish.user %>
-  <%= form_with(url: '/checkout', local: true) do |form| %>
-    <%= hidden_field_tag(:dish_id, @dish.id) %>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="<%= @dish.name %>"
-              data-amount="<%= (@dish.price * 100).to_i %>"
-              data-locale="auto"></script>
-  <% end %>
-  <!-- <%= link_to 'Add To Order', order_path(dish_id: @dish.id, qty: 1), method: :post %> -->
-  <% end %>
+    <p>
+      <strong>Cuisine:</strong>
+      <%= @dish.cuisine %>
+    </p>
+    <p><strong>Price:</strong>
+      <%= @dish.price %>
+    </p>
+  </div>
+  <div class="img-buttons">
+    <div>
+      <h1 class="price">$12</h1>
+    </div>
+    <% if current_user != @dish.user %>
+      <%= form_with(url: '/checkout', local: true) do |form| %>
+        <%= hidden_field_tag(:dish_id, @dish.id) %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="<%= @dish.name %>"
+        data-amount="<%= (@dish.price * 100).to_i %>"
+        data-locale="auto"></script>
+      <% end %>
+    <!-- <%= link_to 'Add To Order', order_path(dish_id: @dish.id, qty: 1), method: :post %> -->
+    <% end %>
   </div>
 </div>

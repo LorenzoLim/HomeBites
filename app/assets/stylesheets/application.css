@@ -19,6 +19,21 @@
   margin: 100px 160px;
 }
 
+.foodShow-container{
+  margin: 0px 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.divider{
+  height: 20px;
+  border-top: 1px solid black;
+}
+
+.imageShow-container{
+  margin: 0px 200px;
+}
+
 .food-grid{
   display: flex;
   flex-wrap: wrap;

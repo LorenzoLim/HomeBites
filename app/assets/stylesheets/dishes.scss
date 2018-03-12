@@ -23,6 +23,16 @@
 }
 
 .img-details{
-  position: relative;
-  left: 110px;
+  padding: 20px;
+  width: 50%;
+}
+
+.price{
+
+}
+
+.img-buttons{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
