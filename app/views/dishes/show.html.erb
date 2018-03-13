@@ -22,7 +22,7 @@
   </div>
   <div class="img-buttons">
     <div>
-      <h1 class="price">$12</h1>
+      <h1 class="price">$<%= @dish.price if @dish.price? %></h1>
     </div>
     <% if current_user != @dish.user %>
       <%= form_with(url: '/checkout', local: true) do |form| %>
